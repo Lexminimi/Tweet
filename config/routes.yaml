@@ -1,0 +1,6 @@
+index:
+    path: /
+    controller: App\Controller\MyController::index
+show:
+    path:     /my
+    controller: App\Controller\MyController::getProperty
