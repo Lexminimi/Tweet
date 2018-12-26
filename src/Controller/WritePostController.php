@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Tweet;
 use App\Form\TweetSend;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use \Datetime;
 
 class WritePostController extends AbstractController
 {
@@ -37,7 +38,7 @@ class WritePostController extends AbstractController
         // but, the original `$tweet` variable has also been updated
         $tweet = $form->getData();
         $tweet->setOwner('1'); // temporarly all of the posts will be owned by 'user 1'
-        $now=new DateTime(time());
+        $now=new DateTime(date('Y-m-d h:i:s A'));
         $tweet->setDate($now); // temporarly all of the posts will be owned by 'user 1'
 
 
